@@ -20,3 +20,13 @@ resource "aws_instance" "ec2_devops" {
   }
 }
 
+
+resource "aws_eip" "eip_devops" {
+  instance = "${aws_instance.ec2_devops.id}"
+  vpc      = true
+}
+
+
+output "eip_output" {
+	value = "${aws_eip.eip_devops.id}"
+}

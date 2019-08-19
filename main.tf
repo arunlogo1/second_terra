@@ -34,5 +34,5 @@ module "ec2_module" {
 
 
 output "final" {
- 	value = "${module.vpc_module.vpc_route_id}"
+ 	value = "${module.ec2_module.eip_output}"
 }
